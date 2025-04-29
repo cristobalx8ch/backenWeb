@@ -5,8 +5,12 @@ ruta.get('/', (req, res) => {
     res.send('ruta raiz');
 });
 
-ruta.get('/alternativa', (req, res) => {
+ruta.get('/h', (req, res) => {
     res.send('ruta alternativa');
+});
+
+ruta.get('/hola', (req, res) => {
+    res.send('ruta hola');
 });
 
 module.exports = ruta;
