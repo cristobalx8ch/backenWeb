@@ -1,4 +1,9 @@
-const { Router } = require('express');
+const Router = require('express');
+const productosRoutes = require('./productos.routes');
+const clienteRoutes = require('./clientes.routes');
+const provedoresRoutes = require('./provedores.routes');
+
+
 const ruta = Router();
 
 ruta.get('/', (req, res) => {
@@ -12,5 +17,9 @@ ruta.get('/h', (req, res) => {
 ruta.get('/hola', (req, res) => {
     res.send('ruta hola');
 });
+
+ruta.use('/productos', productosRoutes);
+ruta.use('/cliente', clienteRoutes);
+ruta.use('/provedor', provedoresRoutes);
 
 module.exports = ruta;
