@@ -20,7 +20,9 @@ ruta.post('/',(req, res) =>{
 
 ruta.put('/:id', (req, res) => {
     const id = req.params.id;
-    res.send(`proveedor con ID ${id} actualizado `);
+    const provedor = req.body;
+    res.send(`proveedor con ID ${id} actualizada  
+        nombre: ${provedor.nombre}| empreza: ${provedor.empreza}`);
 });
 
 ruta.delete('/:id', (req, res) =>{

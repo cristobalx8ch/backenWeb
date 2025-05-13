@@ -15,7 +15,10 @@ ruta.post('/',(req, res) =>{
 });
 
 ruta.put('/:id',(req, res) => {
-    res.send(`Producto con id:${req.params.id} actualizado `);
+    const id = req.params.id;
+    const productos = req.body;
+    res.send(`Producto con ID${id} actualizado
+        nombre: ${productos.nombre} | precio: ${productos.precio} | stock: ${productos.stock}`);
 });
 
 ruta.delete('/:id', (req, res) =>{
