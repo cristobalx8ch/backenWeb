@@ -1,5 +1,5 @@
 const express = require('express');
-const routes = require('./routes/routes.js');
+const routes = require('./routes/index.js');
 const morgan = require('morgan');
 const config = require('./config/config.js');
 
@@ -7,6 +7,9 @@ const app = express();
 
 app.set('port', config.app.port);
 app.use(morgan('dev'));
+
+app.use(express.json());
+
 app.use(routes);
 
 
